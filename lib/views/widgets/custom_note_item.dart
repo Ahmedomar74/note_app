@@ -31,7 +31,7 @@ class NoteItem extends StatelessWidget {
                 'Bluid your career with ahmed omar',
                 style: TextStyle(
                   color: Colors.black.withOpacity(.5),
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
               ),
             ),
