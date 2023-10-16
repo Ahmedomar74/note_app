@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:noteapp/constant/constant.dart';
 
 class CustomBottom extends StatelessWidget {
-  const CustomBottom({super.key, this.onTap});
+  const CustomBottom({super.key, this.onTap, this.isLoading = false});
   final void Function()? onTap;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -15,8 +16,17 @@ class CustomBottom extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           color: kPrimaryColor,
         ),
-        child: const Center(
-          child: Text('add'),
+        child: Center(
+          child: isLoading
+              ? const CircularProgressIndicator(
+                  color: Colors.black,
+                )
+              : const Text(
+                  'Add',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
         ),
       ),
     );
